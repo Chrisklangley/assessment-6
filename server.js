@@ -31,7 +31,7 @@ rollbar.info("User logged in", {loginType: "email+password"});
 // rich metadata will be included automatically, but if you want to override:
 rollbar.scope({person: {id: "123"}}).info("User logged in");
 
-app.use(express.static(path.join(__dirname, "./public")));
+app.use('/', express.static(path.join(__dirname, "./public/index.html")));
 app.use('/styles', express.static(path.join(__dirname, "./public/index.css")));
 app.use('/js', express.static(path.join(__dirname, "./public/index.js")));
 
