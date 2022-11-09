@@ -16,20 +16,20 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
-// record a generic message and send it to Rollbar
-rollbar.log('Hello world!')
+// // record a generic message and send it to Rollbar
+// rollbar.log('Hello world!')
 
-// log methods exist for each level
-rollbar.critical("Crash while processing payment");
-rollbar.warning("Facebook API unavailable");
-rollbar.info("User logged in");
-rollbar.debug("Cron job starting");
+// // log methods exist for each level
+// rollbar.critical("Crash while processing payment");
+// rollbar.warning("Facebook API unavailable");
+// rollbar.info("User logged in");
+// rollbar.debug("Cron job starting");
 
-// can pass arbitrary params
-rollbar.info("User logged in", {loginType: "email+password"});
+// // can pass arbitrary params
+// rollbar.info("User logged in", {loginType: "email+password"});
 
-// rich metadata will be included automatically, but if you want to override:
-rollbar.scope({person: {id: "123"}}).info("User logged in");
+// // rich metadata will be included automatically, but if you want to override:
+// rollbar.scope({person: {id: "123"}}).info("User logged in");
 
 app.use(express.static(path.join(__dirname, "./public")));
 app.use('/styles', express.static(path.join(__dirname, "./public/index.css")));
